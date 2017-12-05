@@ -23,11 +23,11 @@ var app = {
         },
     
         success: function(message) {
-                alert(message);
+            alert(message);
         },
     
         error: function(message) {
-                alert("Error");
+            alert("Error");
         },
     
         connectWifi: function(ssid, pass) {
