@@ -7,7 +7,8 @@ var app = {
         onDeviceReady: function() {
             document.getElementById("connectwifiButton").addEventListener('click', this.button1Clicked.bind(this), false);
             document.getElementById("connectwifiopenButton").addEventListener('click', this.button2Clicked.bind(this), false);
-            document.getElementById("testMethodsButton").addEventListener('click', this.button3Clicked.bind(this), false);
+            document.getElementById("isWifiEnabledButton").addEventListener('click', this.button3Clicked.bind(this), false);
+            document.getElementById("testMethodsButton").addEventListener('click', this.button4Clicked.bind(this), false);
         },
     
         button1Clicked: function() {
@@ -17,8 +18,12 @@ var app = {
         button2Clicked: function() {
             this.connectWifiOpen('AndroidWifi');
         },
-    
+        
         button3Clicked: function() {
+            this.isWifiEnabled();
+        },
+
+        button4Clicked: function() {
             this.pluginTestMethods();
         },
     
@@ -38,6 +43,11 @@ var app = {
         connectWifiOpen: function(ssid) {
             console.log('call Wifi.connectWifiOpen ssid=' + ssid);
             Wifi.connectWifiOpen(ssid, this.success, this.error);
+        },
+        
+        isWifiEnabled: function(ssid) {
+            console.log('call Wifi.isWifiEnabled');
+            Wifi.isWifiEnabled(this.success, this.error);
         },
     
         pluginTestMethods: function() {
