@@ -10,6 +10,7 @@ var app = {
         document.getElementById("iswifienabledButton").addEventListener('click', this.iswifienabledButtonClicked.bind(this), false);
         document.getElementById("enablewifiButton").addEventListener('click', this.enablewifiButtonClicked.bind(this), false);
         document.getElementById("disablewifiButton").addEventListener('click', this.disablewifiButtonClicked.bind(this), false);
+        document.getElementById("getmacaddressButton").addEventListener('click', this.getmacaddressButtonClicked.bind(this), false);
         document.getElementById("testmethodsButton").addEventListener('click', this.testmethodsButtonClicked.bind(this), false);
     },
 
@@ -32,6 +33,10 @@ var app = {
     
     disablewifiButtonClicked: function() {
         this.disableWifi();
+    },
+    
+    getmacaddressButtonClicked: function() {
+        this.getMacAddress();
     },
 
     testmethodsButtonClicked: function() {
@@ -65,12 +70,17 @@ var app = {
     
     enableWifi: function() {
         console.log('call Wifi.setWifiEnabled(true)');
-        Wifi.setWifiEnabled(true);
+        Wifi.setWifiEnabled(true, this.success, this.error);
     },
     
     disableWifi: function() {
         console.log('call Wifi.setWifiEnabled(false)');
-        Wifi.setWifiEnabled(false);
+        Wifi.setWifiEnabled(false, this.success, this.error);
+    },
+    
+    getMacAddress: function() {
+        console.log('call Wifi.getMacAddress');
+        Wifi.getMacAddress(this.success, this.error);
     },
 
     pluginTestMethods: function() {
