@@ -12,7 +12,6 @@ var app = {
         document.getElementById("disablewifiButton").addEventListener('click', this.disablewifiButtonClicked.bind(this), false);
         document.getElementById("getmacaddressButton").addEventListener('click', this.getmacaddressButtonClicked.bind(this), false);
         document.getElementById("listwifinetworksButton").addEventListener('click', this.listwifinetworksButtonClicked.bind(this), false);
-        document.getElementById("testmethodsButton").addEventListener('click', this.testmethodsButtonClicked.bind(this), false);
     },
 
     /* button click listeners */
@@ -98,11 +97,6 @@ var app = {
             }
             alert(s);
         }, this.error);
-    },
-
-    pluginTestMethods: function() {
-        Wifi.successTestMethod(this.success, this.error);
-        Wifi.errorTestMethod(this.success, this.error);
     },
 };
 
