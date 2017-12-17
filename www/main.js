@@ -11,6 +11,7 @@ var app = {
         document.getElementById("enablewifiButton").addEventListener('click', this.enablewifiButtonClicked.bind(this), false);
         document.getElementById("disablewifiButton").addEventListener('click', this.disablewifiButtonClicked.bind(this), false);
         document.getElementById("getmacaddressButton").addEventListener('click', this.getmacaddressButtonClicked.bind(this), false);
+        document.getElementById("listwifinetworksButton").addEventListener('click', this.listwifinetworksButtonClicked.bind(this), false);
         document.getElementById("testmethodsButton").addEventListener('click', this.testmethodsButtonClicked.bind(this), false);
     },
 
@@ -37,6 +38,10 @@ var app = {
     
     getmacaddressButtonClicked: function() {
         this.getMacAddress();
+    },
+    
+    listwifinetworksButtonClicked: function() {
+    this.listWifiNetworks();
     },
 
     testmethodsButtonClicked: function() {
@@ -81,6 +86,18 @@ var app = {
     getMacAddress: function() {
         console.log('call Wifi.getMacAddress');
         Wifi.getMacAddress(this.success, this.error);
+    },
+    
+    listWifiNetworks: function() {
+        console.log('call Wifi.listWifiNetworks');
+        Wifi.listWifiNetworks(this.success, this.error);
+        Wifi.listWifiNetworks(function(message) {
+            var s = "";
+            for (var i = 0; i < message.length; i++) {
+                s = s + '\n\n' + JSON.stringify(message[i]);
+            }
+            alert(s);
+        }, this.error);
     },
 
     pluginTestMethods: function() {
