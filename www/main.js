@@ -10,8 +10,11 @@ var app = {
         document.getElementById("iswifienabledButton").addEventListener('click', this.iswifienabledButtonClicked.bind(this), false);
         document.getElementById("enablewifiButton").addEventListener('click', this.enablewifiButtonClicked.bind(this), false);
         document.getElementById("disablewifiButton").addEventListener('click', this.disablewifiButtonClicked.bind(this), false);
+        document.getElementById("iswificonnectedButton").addEventListener('click', this.iswificonnectedButtonClicked.bind(this), false);
+        document.getElementById("getcurrentssidButton").addEventListener('click', this.getcurrentssidButtonClicked.bind(this), false);        
         document.getElementById("getmacaddressButton").addEventListener('click', this.getmacaddressButtonClicked.bind(this), false);
         document.getElementById("listwifinetworksButton").addEventListener('click', this.listwifinetworksButtonClicked.bind(this), false);
+        document.getElementById("getconfigurednetworksButton").addEventListener('click', this.getconfigurednetworksButtonClicked.bind(this), false);        
     },
 
     /* button click listeners */
@@ -35,16 +38,24 @@ var app = {
         this.disableWifi();
     },
     
+    iswificonnectedButtonClicked: function() {
+        this.isWifiConnected();
+    },
+    
+    getcurrentssidButtonClicked: function() {
+        this.getCurrentSSID();
+    },
+    
     getmacaddressButtonClicked: function() {
         this.getMacAddress();
     },
     
     listwifinetworksButtonClicked: function() {
-    this.listWifiNetworks();
+        this.listWifiNetworks();
     },
 
-    testmethodsButtonClicked: function() {
-        this.pluginTestMethods();
+    getconfigurednetworksButtonClicked: function() {
+        this.getConfiguredNetworks();
     },
 
     /* basic callback functions (success, error) */
@@ -82,6 +93,16 @@ var app = {
         Wifi.setWifiEnabled(false, this.success, this.error);
     },
     
+    isWifiConnected: function() {
+        console.log('call Wifi.isWifiConnected');
+        Wifi.isWifiConnected(this.success, this.error);
+    },
+    
+    getCurrentSSID: function() {
+        console.log('call Wifi.getCurrentSSID');
+        Wifi.getCurrentSSID(this.success, this.error);
+    },
+    
     getMacAddress: function() {
         console.log('call Wifi.getMacAddress');
         Wifi.getMacAddress(this.success, this.error);
@@ -97,6 +118,11 @@ var app = {
             }
             alert(s);
         }, this.error);
+    },
+    
+    getConfiguredNetworks: function() {
+        console.log('call Wifi.getConfiguredNetworks');
+        Wifi.getConfiguredNetworks(this.success, this.error);
     },
 };
 
