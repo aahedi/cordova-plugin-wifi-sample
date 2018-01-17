@@ -18,6 +18,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="^6.4.0" />
-    <plugin name="cordova-plugin-wifi" spec="git+https://gitlab.com/gurvanhenry/cordova-plugin-wifi.git" />
+    <plugin name="com.gurvanhenry.cordova-plugin-wifi" spec="^1.0.1" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
 </widget>
