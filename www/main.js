@@ -18,8 +18,22 @@ var app = {
     },
 
     /* button click listeners */
+    
     connectwifiButtonClicked: function() {
-        this.connectWifi(document.getElementById('SSID').value, document.getElementById('pass').value);
+    var wifi_ssid = document.getElementById('SSID').value;
+    var wifi_pass = document.getElementById('pass').value;
+        
+        if (wifi_ssid == null || wifi_ssid == "") {
+        alert("SSID harus diisi");
+        return false;
+    }
+    else if (wifi_pass == null || wifi_pass == "") {
+        alert("Password harus diisi");
+        return false;
+    }
+	else{
+        this.connectWifi(wifi_ssid,wifi_pass);
+    }
     },
 
     connectwifiopenButtonClicked: function() {
