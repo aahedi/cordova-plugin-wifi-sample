@@ -19,7 +19,7 @@ var app = {
 
     /* button click listeners */
     connectwifiButtonClicked: function() {
-        this.connectWifi('sweetbox', 'cheznous2015');
+        this.connectWifi(document.getElementById('SSID').value, document.getElementById('pass').value);
     },
 
     connectwifiopenButtonClicked: function() {
