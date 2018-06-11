@@ -19,5 +19,6 @@
     </platform>
     <engine name="android" spec="^6.4.0" />
     <plugin name="com.gurvanhenry.cordova-plugin-wifi" spec="^1.0.1" />
+    <plugin name="com.xonoxitron.cordova-plugin-hotspot" spec="https://github.com/xonoxitron/cordova-plugin-hotspot.git" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
 </widget>
