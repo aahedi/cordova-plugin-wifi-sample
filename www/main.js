@@ -130,7 +130,7 @@ var app = {
             for (var i = 0; i < message.length; i++) {
                 s = s + '\n\n' + JSON.stringify(message[i]);
             }
-            document.getElementById('wifi_list').value=s;
+            alert(s);
         }, this.error);
     },
     
@@ -140,4 +140,33 @@ var app = {
     },
 };
 
+function get_wifi_list(id_option){
+let dropdown = document.getElementById(id_option);
+dropdown.length = 0;
+
+let defaultOption = document.createElement('option');
+defaultOption.text = '-Pilih Wifi-';
+
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
+
+	Wifi.listWifiNetworks(this.success, this.error);
+        Wifi.listWifiNetworks(function(message) {
+            var s = "";
+            for (var i = 0; i < message.length; i++) {
+                s = s + ',' + JSON.stringify(message[i]);
+            }
+    const data = s; //data_wifi
+        }, this.error);
+	
+    let option;
+    for (let i = 0; i < data.length; i++) {
+      option = document.createElement('option');
+      option.text = data[i].SSID;
+      option.value = data[i].SSID;
+      dropdown.add(option);
+    }
+
+}
 app.initialize();
+get_wifi_list('wifi_list');
