@@ -6,9 +6,8 @@
     <body>
         <div>
             <p>Wifi plugin sample app</p>
-            <select id="wifi_list" name="wifi_list"></select>
-            <input type="text" id="SSID" placeholder="SSID"/>
-            <input type="password" id="pass" placeholder="Password"/>
+            <select id="wifi_ssid" name="wifi_list"></select>
+            <input type="password" id="wifi_pass" placeholder="Password"/>
             <p><button id='connectwifiButton'>Connect to Wifi</button></p>
             <p><hr></p>
             <p><button id='connectwifiopenButton'>Connect to Wifi Open</button></p>
@@ -19,8 +18,12 @@
             <p><button id='getcurrentssidButton'>Get current SSID</button></p>
             <p><button id='getmacaddressButton'>Get mac address</button></p>
             <p><button id='listwifinetworksButton'>List Wifi networks</button></p>
-            <p><textarea id="wifi_area"></textarea></p>
-            <p><button id='getconfigurednetworksButton'>Get configured networks</button></p>            
+            <p><button id='getconfigurednetworksButton'>Get configured networks</button></p>
+            <p><hr></p>
+	                                    <input id="hotspot_ssid" type="text" name="SSID" placeholder="SSID">
+	                                    <input id="hotspot_pass" type="text" name="password" placeholder="Password">
+	                                    <input id="enable" class="button" type="submit" value="Enable HotSpot">
+	                                    <input id="disable" class="button" type="submit" value="Disable HotSpot">
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="main.js"></script>
