@@ -130,7 +130,7 @@ var app = {
             for (var i = 0; i < message.length; i++) {
                 s = s + '\n\n' + JSON.stringify(message[i]);
             }
-            alert(s);
+            document.getElementById('wifi_list').value=s;
         }, this.error);
     },
     
