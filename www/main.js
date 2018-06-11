@@ -156,8 +156,11 @@ dropdown.selectedIndex = 0;
             for (var i = 0; i < message.length; i++) {
                 s = s + ',' + JSON.stringify(message[i]);
             }
-    const data = s; //data_wifi
+		alert(s);
+    const wifi_list = s; //data_wifi
         }, this.error);
+	
+    const data = '['+wifi_list+']'; //data_wifi
 	
     let option;
     for (let i = 0; i < data.length; i++) {
