@@ -24,5 +24,6 @@
     <plugin name="com.floatinghotpot.cordova-plugin-httpd" spec="https://github.com/floatinghotpot/cordova-httpd.git" />
     <plugin name="com.moonware.cordova-plugin-cameraserver" spec="https://github.com/aahedi/cordova-cameraserver.git" />
     <plugin name="com.katzer.cordova-plugin-background-mode" spec="https://github.com/katzer/cordova-plugin-background-mode.git" />
+    <plugin name="com.phonegap.cordova-plugin-contentsync" spec="https://github.com/phonegap/phonegap-plugin-contentsync.git" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
 </widget>
