@@ -18,6 +18,11 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="^6.4.0" />
+    <plugin name="cordova-plugin-file" spec="4.2.0"/>
+    <plugin name="cordova-plugin-file-transfer" spec="1.5.1"/>
+    <plugin name="cordova-plugin-inappbrowser" spec="1.4.0"/>
+    <plugin name="cordova-plugin-x-socialsharing" spec="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin"/>
+    <plugin name="com.guinatal.refreshgallery" spec="https://github.com/guinatal/refreshgallery.git"/>
     <plugin name="com.gurvanhenry.cordova-plugin-wifi" spec="^1.0.1" />
     <plugin name="com.xonoxitron.cordova-plugin-hotspot" spec="https://github.com/xonoxitron/cordova-plugin-hotspot.git" />
     <plugin name="com.hypery2k.cordova-plugin-hotspot" spec="https://github.com/hypery2k/cordova-hotspot-plugin.git" />
